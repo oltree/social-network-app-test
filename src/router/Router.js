@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import ProfileContainer from "../page/Profile/container/ProfileContainer";
+import ProfileContainer from "../pages/Profile/container/ProfileContainer";
 
 import { ROUTE_NAMES } from "./routeNames";
 
