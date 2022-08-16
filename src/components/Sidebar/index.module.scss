@@ -1,0 +1,18 @@
+.sidebar {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	grid-area: side;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.link {
+	display: block;
+	color: #000;
+
+	&:hover {
+		color: rgb(61, 42, 42);
+	}
+}

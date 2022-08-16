@@ -1,0 +1,16 @@
+.wrapper {
+	min-height: 100vh;
+	background: rgb(187, 192, 143);
+}
+
+.container {
+	max-width: 70%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-areas:
+		"head head"
+		"side cont";
+	grid-template-rows: 60px 1fr;
+	grid-template-columns: 2fr 10fr;
+	grid-gap: 10px;
+}
