@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TheSocialNetwork/static/css/main.bba47344.css",
+    "main.js": "/TheSocialNetwork/static/js/main.8d75dcbb.js",
+    "static/media/logo.png": "/TheSocialNetwork/static/media/logo.49333cff60aab0aa9cee.png",
+    "static/media/backgroundProfile.jpg": "/TheSocialNetwork/static/media/backgroundProfile.680ef93366d56e2319bc.jpg",
+    "index.html": "/TheSocialNetwork/index.html",
+    "main.bba47344.css.map": "/TheSocialNetwork/static/css/main.bba47344.css.map",
+    "main.8d75dcbb.js.map": "/TheSocialNetwork/static/js/main.8d75dcbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bba47344.css",
+    "static/js/main.8d75dcbb.js"
+  ]
+}
