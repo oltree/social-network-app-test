@@ -14,3 +14,11 @@
 	grid-template-columns: 2fr 10fr;
 	grid-gap: 10px;
 }
+
+.contentWrapper {
+	min-height: 100%;
+	grid-area: cont;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
