@@ -1,4 +1,4 @@
-import AvatarProfile from "../../static/images/avatarProfile.jpg";
+import AvatarProfile from "../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
 
