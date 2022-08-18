@@ -1,6 +1,6 @@
 export const ROUTE_NAMES = {
   PROFILE: "/profile",
-  MESSAGES: "/messages",
+  MESSAGES: "/dialogs",
   NEWS: "/news",
   MUSIC: "/music",
   SETTING: "/setting",
