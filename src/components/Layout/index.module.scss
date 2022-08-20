@@ -1,6 +1,6 @@
 .wrapper {
 	min-height: 100vh;
-	background: rgb(187, 192, 143);
+	background: rgb(61, 93, 131);
 }
 
 .container {
@@ -15,7 +15,7 @@
 	grid-gap: 10px;
 }
 
-.contentWrapper {
+.contentComponent {
 	min-height: 100%;
 	grid-area: cont;
 	padding: 10px;
