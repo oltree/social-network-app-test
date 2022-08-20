@@ -1,51 +1,21 @@
-import { NavLink } from "react-router-dom";
-
-import Avatar from "../../../../static/images/avatar.jpg";
+import Dialog from "../Dialog";
+import Message from "../Message";
 
 import styles from "./index.module.scss";
 
-const DialogsLayout = () => {
+const DialogsLayout = ({ users, messages }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dialogs}>
-        <div className={styles.dialog}>
-          <NavLink to="/dialogs/1">Oleg</NavLink>
-        </div>
-        <div className={styles.dialog}>
-          <NavLink to="/dialogs/1">Dasha</NavLink>
-        </div>
-        <div className={styles.dialog}>
-          <NavLink to="/dialogs/1">Ivan</NavLink>
-        </div>
+        {users.map(({ id, name }) => (
+          <Dialog key={id} id={id} name={name} />
+        ))}
       </div>
       <div className={styles.verticalLine}></div>
       <div className={styles.messages}>
-        <div className={styles.message}>
-          <div className={styles.userAvatar}>
-            <img
-              className={styles.avatar}
-              height={40}
-              src={Avatar}
-              alt="user-avatar"
-            />
-          </div>
-          <div className={styles.messageText}>
-            <p className={styles.text}>Hello!</p>
-          </div>
-        </div>
-        <div className={styles.message}>
-          <div className={styles.userAvatar}>
-            <img
-              className={styles.avatar}
-              height={40}
-              src={Avatar}
-              alt="user-avatar"
-            />
-          </div>
-          <div className={styles.messageText}>
-            <p className={styles.text}>How are you?</p>
-          </div>
-        </div>
+        {messages.map(({ id, message }) => (
+          <Message key={id} id={id} message={message} />
+        ))}
       </div>
     </div>
   );

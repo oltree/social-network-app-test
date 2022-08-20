@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import capitalize from "lodash/capitalize";
 import startCase from "lodash/startCase";
 
@@ -10,9 +10,9 @@ const Sidebar = () => {
   return (
     <aside className={styles.wrapper}>
       {Object.entries(ROUTE_NAMES).map(([pageName, path]) => (
-        <NavLink className={styles.link} key={path} to={path}>
+        <Link className={styles.link} key={path} to={path}>
           {startCase(capitalize(pageName))}
-        </NavLink>
+        </Link>
       ))}
     </aside>
   );

@@ -1,22 +1,11 @@
-.posts {
+.title {
 	margin-bottom: 20px;
 	font-size: 18px;
 	font-weight: 500;
 }
 
-.form {
+.posts {
 	display: flex;
+	flex-direction: column;
 	gap: 10px;
-	margin-bottom: 20px;
-}
-
-.input {
-	width: 100%;
-	padding: 10px;
-	border-radius: 5px;
-}
-
-.button {
-	width: 100px;
-	border-radius: 5px;
 }

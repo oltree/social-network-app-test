@@ -8,6 +8,7 @@ import { ROUTE_NAMES } from "./routeNames";
 const Router = () => {
   return (
     <Routes>
+      <Route path={ROUTE_NAMES.HOME} element={<div>HOME</div>} />
       <Route path={ROUTE_NAMES.PROFILE} element={<ProfileContainer />} />
       <Route path={ROUTE_NAMES.MESSAGES} element={<DialogsContainer />} />
       <Route path={ROUTE_NAMES.NEWS} element={<div>NEWS</div>} />
