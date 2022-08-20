@@ -1,24 +1,41 @@
-import Dialog from "../Dialog";
-import Message from "../Message";
+import { NavLink, Outlet } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import styles from "./index.module.scss";
 
-const DialogsLayout = ({ users, messages }) => {
+const DialogsLayout = ({ users }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dialogs}>
         {users.map(({ id, name }) => (
-          <Dialog key={id} id={id} name={name} />
+          <NavLink className={styles.dialog} key={id} to={id}>
+            {name}
+          </NavLink>
         ))}
       </div>
       <div className={styles.verticalLine}></div>
-      <div className={styles.messages}>
-        {messages.map(({ id, message }) => (
-          <Message key={id} id={id} message={message} />
-        ))}
+      <div>
+        <Outlet />
       </div>
     </div>
   );
+};
+
+DialogsLayout.propTypes = {
+  profilePage: PropTypes.shape({
+    postList: PropTypes.arrayOf(
+      PropTypes.shape({ id: PropTypes.string, textPost: PropTypes.string })
+    ),
+  }),
+  messagesPage: PropTypes.shape({
+    users: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        id: PropTypes.string,
+        messages: PropTypes.arrayOf,
+      })
+    ),
+  }),
 };
 
 export default DialogsLayout;

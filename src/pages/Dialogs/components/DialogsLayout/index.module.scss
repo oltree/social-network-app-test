@@ -11,16 +11,18 @@
 	gap: 10px;
 }
 
+.dialog {
+	padding: 5px;
+	color: #000;
+	border: 1px solid #000;
+	border-radius: 5px;
+
+	&:hover {
+		color: rgb(80, 57, 57);
+	}
+}
+
 .verticalLine {
 	width: 1px;
 	background: #000;
-}
-
-.messages {
-	padding: 10px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	border: 1px solid #000;
-	border-radius: 5px;
 }
