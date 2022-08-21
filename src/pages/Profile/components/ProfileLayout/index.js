@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import ProfileBackground from "../ProfileBackground";
 import ProfileContactInformation from "../ProfileContactInformation";
 import ProfilePosts from "../ProfilePosts";
@@ -16,6 +18,12 @@ const ProfileLayout = ({ posts, handleAddPost, handleRemovePost }) => {
       />
     </div>
   );
+};
+
+ProfileLayout.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string, textPost: PropTypes.string })
+  ),
 };
 
 export default ProfileLayout;

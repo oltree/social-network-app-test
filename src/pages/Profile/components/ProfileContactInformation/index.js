@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import Avatar from "../../../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
@@ -21,4 +23,4 @@ const ProfileContactInformation = () => {
   );
 };
 
-export default ProfileContactInformation;
+export default memo(ProfileContactInformation);

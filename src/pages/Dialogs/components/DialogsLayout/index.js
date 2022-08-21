@@ -22,20 +22,13 @@ const DialogsLayout = ({ users }) => {
 };
 
 DialogsLayout.propTypes = {
-  profilePage: PropTypes.shape({
-    postList: PropTypes.arrayOf(
-      PropTypes.shape({ id: PropTypes.string, textPost: PropTypes.string })
-    ),
-  }),
-  messagesPage: PropTypes.shape({
-    users: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        id: PropTypes.string,
-        messages: PropTypes.arrayOf,
-      })
-    ),
-  }),
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      id: PropTypes.string,
+      messages: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
 };
 
 export default DialogsLayout;

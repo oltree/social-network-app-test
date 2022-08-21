@@ -11,7 +11,6 @@ import { allProjectData } from "../static/allProjectData";
 const Router = () => {
   return (
     <Routes>
-      <Route path={ROUTE_NAMES.HOME} element={<div>HOME</div>} />
       <Route path={ROUTE_NAMES.PROFILE} element={<ProfileContainer />} />
       <Route path={ROUTE_NAMES.MESSAGES} element={<DialogsContainer />}>
         {allProjectData.messagesPage.users.map(({ id, messages }) => (
