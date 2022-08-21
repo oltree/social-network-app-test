@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 
 import styles from "./index.module.scss";
 
@@ -16,18 +16,24 @@ const FormForCreatingPosts = ({ handleAddPost }) => {
 
   return (
     <form className={styles.form} onSubmit={handleFormSubmit}>
-      <input
-        className={styles.input}
+      <textarea
+        rows={3}
+        className={styles.textarea}
         onChange={handleFormChange}
         value={text}
         type="text"
         placeholder="Post..."
       />
-      <button className={styles.button} onClick={() => handleAddPost(text)}>
-        Add Post
-      </button>
+      <div className={styles.buttonContainer}>
+        <button className={styles.button} onClick={() => {}}>
+          Clear
+        </button>
+        <button className={styles.button} onClick={() => handleAddPost(text)}>
+          Add Post
+        </button>
+      </div>
     </form>
   );
 };
 
-export default FormForCreatingPosts;
+export default memo(FormForCreatingPosts);

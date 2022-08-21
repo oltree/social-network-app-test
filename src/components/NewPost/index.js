@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import Avatar from "../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
@@ -7,7 +9,7 @@ const NewPost = ({ id, textPost, handleRemovePost }) => {
     <div className={styles.wrapper}>
       <div className={styles.post}>
         <img className={styles.avatar} height={50} src={Avatar} alt="avatar" />
-        <p className={styles.text}>{textPost}</p>
+        <div className={styles.text}>{textPost}</div>
       </div>
       <button className={styles.close} onClick={() => handleRemovePost(id)}>
         X
@@ -16,4 +18,4 @@ const NewPost = ({ id, textPost, handleRemovePost }) => {
   );
 };
 
-export default NewPost;
+export default memo(NewPost);

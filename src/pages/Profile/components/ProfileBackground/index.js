@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import BackgroundProfileImage from "./static/images/backgroundProfile.jpg";
 
 import styles from "./index.module.scss";
@@ -14,4 +16,4 @@ const ProfileBackground = () => {
   );
 };
 
-export default ProfileBackground;
+export default memo(ProfileBackground);

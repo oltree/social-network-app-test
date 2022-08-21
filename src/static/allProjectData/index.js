@@ -1,4 +1,4 @@
-export const allProjectData = {
+export const data = {
   profilePage: { postList: [] },
   messagesPage: {
     users: [

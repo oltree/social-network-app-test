@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import NewPost from "../../../../components/NewPost";
 import FormForCreatingPosts from "../FormForCreatingPosts";
 
@@ -24,4 +26,4 @@ const ProfilePosts = ({ posts, handleAddPost, handleRemovePost }) => {
   );
 };
 
-export default ProfilePosts;
+export default memo(ProfilePosts);
