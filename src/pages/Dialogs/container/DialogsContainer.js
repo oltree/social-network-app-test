@@ -1,9 +1,9 @@
 import DialogsLayout from "../components/DialogsLayout";
 
-import { allProjectData } from "../../../static/allProjectData";
+import { data } from "../../../static/Data";
 
 const DialogsContainer = () => {
-  return <DialogsLayout users={allProjectData.messagesPage?.users} />;
+  return <DialogsLayout users={data.messagesPage?.users} />;
 };
 
 export default DialogsContainer;

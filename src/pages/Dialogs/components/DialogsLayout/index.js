@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import styles from "./index.module.scss";
+import FormForCreatingPosts from "../../../Profile/components/FormForCreatingPosts";
 
 const DialogsLayout = ({ users }) => {
   return (
@@ -14,8 +15,12 @@ const DialogsLayout = ({ users }) => {
         ))}
       </div>
       <div className={styles.verticalLine}></div>
-      <div>
+      <div className={styles.messages}>
         <Outlet />
+        <div>
+          <div>lol</div>
+          <FormForCreatingPosts />
+        </div>
       </div>
     </div>
   );

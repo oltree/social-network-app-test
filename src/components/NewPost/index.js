@@ -9,7 +9,7 @@ const NewPost = ({ id, textPost, handleRemovePost }) => {
     <div className={styles.wrapper}>
       <div className={styles.post}>
         <img className={styles.avatar} height={50} src={Avatar} alt="avatar" />
-        <p className={styles.text}>{textPost}</p>
+        <div className={styles.text}>{textPost}</div>
       </div>
       <button className={styles.close} onClick={() => handleRemovePost(id)}>
         X

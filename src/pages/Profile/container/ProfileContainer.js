@@ -3,10 +3,10 @@ import { v4 as uuid } from "uuid";
 
 import ProfileLayout from "../components/ProfileLayout";
 
-import { allProjectData } from "../../../static/allProjectData";
+import { data } from "../../../static/Data";
 
 const ProfileContainer = () => {
-  const [posts, setPosts] = useState(allProjectData.profilePage?.postList);
+  const [posts, setPosts] = useState(data.profilePage?.postList);
 
   const handleAddPost = useCallback((textPost) => {
     setPosts((state) => {

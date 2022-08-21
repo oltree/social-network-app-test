@@ -6,14 +6,14 @@ import DialogsContainer from "../pages/Dialogs/container/DialogsContainer";
 import Message from "../pages/Dialogs/components/Message";
 
 import { ROUTE_NAMES } from "./routeNames";
-import { allProjectData } from "../static/allProjectData";
+import { data } from "../static/Data";
 
 const Router = () => {
   return (
     <Routes>
       <Route path={ROUTE_NAMES.PROFILE} element={<ProfileContainer />} />
       <Route path={ROUTE_NAMES.MESSAGES} element={<DialogsContainer />}>
-        {allProjectData.messagesPage.users.map(({ id, messages }) => (
+        {data.messagesPage.users.map(({ id, messages }) => (
           <Route
             key={uuid()}
             path={id}
