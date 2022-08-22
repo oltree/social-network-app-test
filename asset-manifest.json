@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/TheSocialNetwork/static/css/main.413d6698.css",
-    "main.js": "/TheSocialNetwork/static/js/main.e3f0141a.js",
+    "main.css": "/TheSocialNetwork/static/css/main.7b40ba29.css",
+    "main.js": "/TheSocialNetwork/static/js/main.03525ddc.js",
     "static/media/logo.png": "/TheSocialNetwork/static/media/logo.49333cff60aab0aa9cee.png",
     "static/media/backgroundProfile.jpg": "/TheSocialNetwork/static/media/backgroundProfile.680ef93366d56e2319bc.jpg",
     "static/media/avatar.jpg": "/TheSocialNetwork/static/media/avatar.8e7ab55da0bc52271ed8.jpg",
     "index.html": "/TheSocialNetwork/index.html",
-    "main.413d6698.css.map": "/TheSocialNetwork/static/css/main.413d6698.css.map",
-    "main.e3f0141a.js.map": "/TheSocialNetwork/static/js/main.e3f0141a.js.map"
+    "main.7b40ba29.css.map": "/TheSocialNetwork/static/css/main.7b40ba29.css.map",
+    "main.03525ddc.js.map": "/TheSocialNetwork/static/js/main.03525ddc.js.map"
   },
   "entrypoints": [
-    "static/css/main.413d6698.css",
-    "static/js/main.e3f0141a.js"
+    "static/css/main.7b40ba29.css",
+    "static/js/main.03525ddc.js"
   ]
 }
