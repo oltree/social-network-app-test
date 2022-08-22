@@ -5,21 +5,9 @@
 }
 
 .dialogs {
-	list-style: normal;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-}
-
-.dialog {
-	padding: 5px;
-	color: #000;
-	border: 1px solid #000;
-	border-radius: 5px;
-
-	&:hover {
-		color: rgb(80, 57, 57);
-	}
 }
 
 .verticalLine {

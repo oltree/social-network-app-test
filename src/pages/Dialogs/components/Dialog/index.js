@@ -7,7 +7,9 @@ const Dialog = ({ id, name }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dialog}>
-        <NavLink to={id}>{name}</NavLink>
+        <NavLink className={styles.link} to={id}>
+          {name}
+        </NavLink>
       </div>
     </div>
   );
