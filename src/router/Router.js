@@ -13,7 +13,7 @@ const Router = () => {
     <Routes>
       <Route path={ROUTE_NAMES.PROFILE} element={<ProfileContainer />} />
       <Route path={ROUTE_NAMES.MESSAGES} element={<DialogsContainer />}>
-        {data.messagesPage.users.map(({ id, messages }) => (
+        {data.messagesPage?.users.map(({ id, messages }) => (
           <Route
             key={uuid()}
             path={id}
