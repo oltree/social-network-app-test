@@ -1,14 +1,28 @@
-import { memo } from "react";
+import { memo, useState, useCallback } from "react";
 import { v4 as uuid } from "uuid";
+
+import MessageForm from "../MessageForm";
 
 import Avatar from "../../../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
 
 const Message = ({ messages }) => {
+  const [listMessages, setListMessages] = useState(messages);
+
+  const handleAddMessage = useCallback((message) => {
+    setListMessages((state) => {
+      const messagesCopy = [...state];
+
+      const newMessage = message;
+
+      return [...messagesCopy, newMessage];
+    });
+  }, []);
+
   return (
     <div className={styles.wrapper}>
-      {messages.map((message) => (
+      {listMessages.map((message) => (
         <div key={uuid()} className={styles.message}>
           <div className={styles.userAvatar}>
             <img
@@ -24,6 +38,9 @@ const Message = ({ messages }) => {
           </div>
         </div>
       ))}
+      <div>
+        <MessageForm handleAddMessage={handleAddMessage} />
+      </div>
     </div>
   );
 };

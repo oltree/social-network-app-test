@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from "react";
 
 import styles from "./index.module.scss";
 
-const FormForCreatingPosts = ({ handleAddPost }) => {
+const MessageForm = ({ handleAddMessage }) => {
   const [text, setText] = useState("");
 
   const handleFormChange = useCallback((event) => {
@@ -11,6 +11,10 @@ const FormForCreatingPosts = ({ handleAddPost }) => {
 
   const handleFormSubmit = useCallback((event) => {
     event.preventDefault();
+    setText("");
+  }, []);
+
+  const handleClearForm = useCallback(() => {
     setText("");
   }, []);
 
@@ -25,15 +29,18 @@ const FormForCreatingPosts = ({ handleAddPost }) => {
         placeholder="Post..."
       />
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={() => {}}>
+        <button className={styles.button} onClick={handleClearForm}>
           Clear
         </button>
-        <button className={styles.button} onClick={() => handleAddPost(text)}>
-          Add Post
+        <button
+          className={styles.button}
+          onClick={() => handleAddMessage(text)}
+        >
+          Send
         </button>
       </div>
     </form>
   );
 };
 
-export default memo(FormForCreatingPosts);
+export default memo(MessageForm);

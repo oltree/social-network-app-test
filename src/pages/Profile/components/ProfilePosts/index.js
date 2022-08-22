@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import NewPost from "../../../../components/NewPost";
-import FormForCreatingPosts from "../FormForCreatingPosts";
+import PostsForm from "../PostsForm";
 
 import styles from "./index.module.scss";
 
@@ -10,7 +10,7 @@ const ProfilePosts = ({ posts, handleAddPost, handleRemovePost }) => {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>My Posts</h2>
 
-      <FormForCreatingPosts handleAddPost={handleAddPost} />
+      <PostsForm handleAddPost={handleAddPost} />
 
       <div className={styles.posts}>
         {posts.map(({ id, textPost }) => (
