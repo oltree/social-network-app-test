@@ -26,7 +26,7 @@ const MessageForm = ({ handleAddMessage }) => {
         onChange={handleFormChange}
         value={text}
         type="text"
-        placeholder="Post..."
+        placeholder="Message..."
       />
       <div className={styles.buttonContainer}>
         <button className={styles.button} onClick={handleClearForm}>
