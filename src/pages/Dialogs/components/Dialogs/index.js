@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.scss";
 
-const Dialog = ({ id, name }) => {
+const Dialogs = ({ id, name }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dialog}>
@@ -15,4 +15,4 @@ const Dialog = ({ id, name }) => {
   );
 };
 
-export default memo(Dialog);
+export default memo(Dialogs);

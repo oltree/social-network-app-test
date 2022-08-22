@@ -3,24 +3,36 @@ export const data = {
   messagesPage: {
     users: [
       {
-        name: "Oleg",
-        id: "oleg",
-        messages: ["Hello, Oleg!", "How are you?"],
+        name: "Max",
+        id: "max",
+        messages: {
+          user: ["Hello, Oleg!", "How are you?"],
+          me: [],
+        },
       },
       {
         name: "Dasha",
         id: "dasha",
-        messages: ["Hello, Dasha!", "How are you?"],
+        messages: {
+          user: ["Hello, Oleg!", "What are you doing?"],
+          me: [],
+        },
       },
       {
         name: "Ivan",
         id: "ivan",
-        messages: ["Hello, Ivan!", "How are you?"],
+        messages: {
+          user: ["Hello, Oleg!", "Will you go for a walk?"],
+          me: [],
+        },
       },
       {
-        name: "Sveta",
-        id: "sveta",
-        messages: ["Hello, Sveta!", "How are you?"],
+        name: "Vadim",
+        id: "vadim",
+        messages: {
+          user: ["Hello, Oleg!", "When's your birthday?"],
+          me: [],
+        },
       },
     ],
   },

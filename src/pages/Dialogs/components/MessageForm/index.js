@@ -21,11 +21,10 @@ const MessageForm = ({ handleAddMessage }) => {
   return (
     <form className={styles.form} onSubmit={handleFormSubmit}>
       <textarea
-        rows={3}
+        rows={1}
         className={styles.textarea}
         onChange={handleFormChange}
         value={text}
-        type="text"
         placeholder="Message..."
       />
       <div className={styles.buttonContainer}>
