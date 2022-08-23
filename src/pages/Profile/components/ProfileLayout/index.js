@@ -6,15 +6,31 @@ import ProfilePosts from "../ProfilePosts";
 
 import styles from "./index.module.scss";
 
-const ProfileLayout = ({ posts, handleAddPost, handleRemovePost }) => {
+const ProfileLayout = ({
+  posts,
+  onAddPost,
+  onRemovePost,
+  newTextPost,
+  onFormChange,
+  onFormSubmit,
+  onClearForm,
+  onIncrementLikes,
+  onDecrementLikes,
+}) => {
   return (
     <div className={styles.wrapper}>
       <ProfileBackground />
       <ProfileContactInformation />
       <ProfilePosts
         posts={posts}
-        handleAddPost={handleAddPost}
-        handleRemovePost={handleRemovePost}
+        onAddPost={onAddPost}
+        onRemovePost={onRemovePost}
+        newTextPost={newTextPost}
+        onFormChange={onFormChange}
+        onFormSubmit={onFormSubmit}
+        onClearForm={onClearForm}
+        onIncrementLikes={onIncrementLikes}
+        onDecrementLikes={onDecrementLikes}
       />
     </div>
   );
@@ -22,7 +38,11 @@ const ProfileLayout = ({ posts, handleAddPost, handleRemovePost }) => {
 
 ProfileLayout.propTypes = {
   posts: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string, textPost: PropTypes.string })
+    PropTypes.shape({
+      id: PropTypes.string,
+      textPost: PropTypes.string,
+      likes: PropTypes.number,
+    })
   ),
 };
 

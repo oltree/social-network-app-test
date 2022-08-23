@@ -1,38 +1,32 @@
-import { memo, useCallback, useState } from "react";
+import { memo } from "react";
 
 import styles from "./index.module.scss";
 
-const MessageForm = ({ handleAddPost }) => {
-  const [text, setText] = useState("");
-
-  const handleFormChange = useCallback((event) => {
-    setText(event.target.value);
-  }, []);
-
-  const handleFormSubmit = useCallback((event) => {
-    event.preventDefault();
-    setText("");
-  }, []);
-
-  const handleClearForm = useCallback(() => {
-    setText("");
-  }, []);
-
+const MessageForm = ({
+  onAddPost,
+  newTextPost,
+  onFormChange,
+  onFormSubmit,
+  onClearForm,
+}) => {
   return (
-    <form className={styles.form} onSubmit={handleFormSubmit}>
+    <form className={styles.form} onSubmit={onFormSubmit}>
       <textarea
         rows={3}
         className={styles.textarea}
-        onChange={handleFormChange}
-        value={text}
+        onChange={onFormChange}
+        value={newTextPost}
         type="text"
         placeholder="Post..."
       />
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={handleClearForm}>
+        <button className={styles.button} onClick={onClearForm}>
           Clear
         </button>
-        <button className={styles.button} onClick={() => handleAddPost(text)}>
+        <button
+          className={styles.button}
+          onClick={() => onAddPost(newTextPost)}
+        >
           Send
         </button>
       </div>
