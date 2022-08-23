@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import NewPost from "../../../../components/NewPost";
+import NewPost from "../NewPost";
 import PostsForm from "../PostsForm";
 
 import styles from "./index.module.scss";

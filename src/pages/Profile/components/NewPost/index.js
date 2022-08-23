@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import Avatar from "../../static/images/avatar.jpg";
+import Avatar from "../../../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
 
