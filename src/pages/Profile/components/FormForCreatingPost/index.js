@@ -1,5 +1,8 @@
 import { memo } from "react";
 
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+
 import styles from "./index.module.scss";
 
 const FormForCreatingPost = ({ postText, onPostCreate, onFormChange }) => {
@@ -14,9 +17,13 @@ const FormForCreatingPost = ({ postText, onPostCreate, onFormChange }) => {
         onChange={onFormChange}
       />
       <div className={styles.buttonContainer}>
-        <button type="submit" className={styles.button}>
+        <Button
+          type="submit"
+          endIcon={<SendIcon />}
+          sx={{ border: "1px solid #564" }}
+        >
           Send
-        </button>
+        </Button>
       </div>
     </form>
   );
