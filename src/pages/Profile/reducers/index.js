@@ -15,7 +15,7 @@ export const profilePostsReducer = handleActions(
       const newPost = {
         id: uuid(),
         text: postText,
-        likes: 0,
+        likes: null,
       };
 
       postsCopy.unshift(newPost);
@@ -31,16 +31,35 @@ export const profilePostsReducer = handleActions(
       const postIndexToRemove = postsCopy.findIndex((post) => post.id === id);
 
       postsCopy.splice(postIndexToRemove, 1);
+
+      return {
+        ...state,
+        posts: postsCopy,
+      };
     },
     [actions.INCREMENT_LIKE]: (state, { payload: id }) => {
-      const foundPost = state.posts.find((post) => post.id === id);
-      console.log(state.posts);
-      foundPost.posts.likes += 1;
+      const postsCopy = [...state.posts];
+
+      const foundPost = postsCopy.find((post) => post.id === id);
+
+      foundPost.likes += 1;
+
+      return {
+        ...state,
+        posts: postsCopy,
+      };
     },
     [actions.DECREMENT_LIKE]: (state, { payload: id }) => {
-      const foundPost = state.posts.find((post) => post.id === id);
+      const postsCopy = [...state.posts];
+
+      const foundPost = postsCopy.find((post) => post.id === id);
 
       if (foundPost.likes > 0) foundPost.likes -= 1;
+
+      return {
+        ...state,
+        posts: postsCopy,
+      };
     },
   },
   initialState

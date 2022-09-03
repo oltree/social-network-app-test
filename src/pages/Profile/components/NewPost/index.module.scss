@@ -1,23 +1,43 @@
 .wrapper {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+
+.header {
 	display: flex;
 	justify-content: space-between;
-	gap: 15px;
 }
 
 .avatar {
+	border-radius: 40px;
 	margin-right: 15px;
 }
 
 .post {
 	display: flex;
+	align-items: center;
+}
+
+.data {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 .text {
+	width: 800px;
 	word-wrap: break-word;
 }
 
+.likesContainer {
+	display: flex;
+}
+
 .close {
-	padding: 10px;
 	color: white;
 	background: red;
 	border-radius: 5px;

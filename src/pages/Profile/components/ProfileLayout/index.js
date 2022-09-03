@@ -1,8 +1,10 @@
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import { v4 as uuid } from "uuid";
 
 import ProfileBackground from "../ProfileBackground";
 import ProfileContactInformation from "../ProfileContactInformation";
-import ProfilePosts from "../ProfilePosts";
+import NewPost from "../NewPost";
+import PostsForm from "../PostsForm";
 
 import styles from "./index.module.scss";
 
@@ -19,27 +21,41 @@ const ProfileLayout = ({
     <div className={styles.wrapper}>
       <ProfileBackground />
       <ProfileContactInformation />
-      <ProfilePosts
-        posts={posts}
-        postText={postText}
-        onPostCreate={onPostCreate}
-        onFormChange={onFormChange}
-        onPostRemove={onPostRemove}
-        onPostIncrementLike={onPostIncrementLike}
-        onPostDecrementLike={onPostDecrementLike}
-      />
+      <div className={styles.wrapper}>
+        <h2 className={styles.title}>My Posts</h2>
+
+        <PostsForm
+          postText={postText}
+          onPostCreate={onPostCreate}
+          onFormChange={onFormChange}
+        />
+
+        <div className={styles.posts}>
+          {posts.map(({ id, text, likes }) => (
+            <NewPost
+              key={uuid()}
+              id={id}
+              text={text}
+              likes={likes}
+              onPostRemove={onPostRemove}
+              onPostIncrementLike={onPostIncrementLike}
+              onPostDecrementLike={onPostDecrementLike}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-/* ProfileLayout.propTypes = {
+ProfileLayout.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      textPost: PropTypes.string,
+      text: PropTypes.string,
       likes: PropTypes.number,
     })
   ),
-}; */
+};
 
 export default ProfileLayout;

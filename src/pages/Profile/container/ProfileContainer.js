@@ -5,9 +5,14 @@ import ProfileLayout from "../components/ProfileLayout";
 
 import { postsSelector } from "../selectors/";
 
-import { CREATE_POST, REMOVE_POST } from "../actions";
-
 import { useForm } from "../../../hooks";
+
+import {
+  CREATE_POST,
+  REMOVE_POST,
+  INCREMENT_LIKE,
+  DECREMENT_LIKE,
+} from "../actions";
 
 const ProfileContainer = () => {
   const dispatch = useDispatch();
@@ -18,16 +23,13 @@ const ProfileContainer = () => {
     postText: "",
   });
 
-  const handlePostCreate = useCallback(
-    (event) => {
-      event.preventDefault();
+  const handlePostCreate = (event) => {
+    event.preventDefault();
 
-      dispatch(CREATE_POST(formData.postText));
+    dispatch(CREATE_POST(formData.postText));
 
-      handleFormReset();
-    },
-    [formData.postText, dispatch, handleFormReset]
-  );
+    handleFormReset();
+  };
 
   const handlePostRemove = useCallback(
     (id) => {
@@ -38,14 +40,14 @@ const ProfileContainer = () => {
 
   const handlePostIncrementLike = useCallback(
     (id) => {
-      dispatch(REMOVE_POST(id));
+      dispatch(INCREMENT_LIKE(id));
     },
     [dispatch]
   );
 
   const handlePostDecrementLike = useCallback(
     (id) => {
-      dispatch(REMOVE_POST(id));
+      dispatch(DECREMENT_LIKE(id));
     },
     [dispatch]
   );
