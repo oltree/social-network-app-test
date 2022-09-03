@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 
 import ProfileBackground from "../ProfileBackground";
 import ProfileContactInformation from "../ProfileContactInformation";
@@ -8,14 +8,12 @@ import styles from "./index.module.scss";
 
 const ProfileLayout = ({
   posts,
-  onAddPost,
-  onRemovePost,
-  newTextPost,
+  postText,
+  onPostCreate,
   onFormChange,
-  onFormSubmit,
-  onClearForm,
-  onIncrementLikes,
-  onDecrementLikes,
+  onPostRemove,
+  onPostIncrementLike,
+  onPostDecrementLike,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -23,20 +21,18 @@ const ProfileLayout = ({
       <ProfileContactInformation />
       <ProfilePosts
         posts={posts}
-        onAddPost={onAddPost}
-        onRemovePost={onRemovePost}
-        newTextPost={newTextPost}
+        postText={postText}
+        onPostCreate={onPostCreate}
         onFormChange={onFormChange}
-        onFormSubmit={onFormSubmit}
-        onClearForm={onClearForm}
-        onIncrementLikes={onIncrementLikes}
-        onDecrementLikes={onDecrementLikes}
+        onPostRemove={onPostRemove}
+        onPostIncrementLike={onPostIncrementLike}
+        onPostDecrementLike={onPostDecrementLike}
       />
     </div>
   );
 };
 
-ProfileLayout.propTypes = {
+/* ProfileLayout.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -44,6 +40,6 @@ ProfileLayout.propTypes = {
       likes: PropTypes.number,
     })
   ),
-};
+}; */
 
 export default ProfileLayout;

@@ -2,31 +2,19 @@ import { memo } from "react";
 
 import styles from "./index.module.scss";
 
-const MessageForm = ({
-  onAddPost,
-  newTextPost,
-  onFormChange,
-  onFormSubmit,
-  onClearForm,
-}) => {
+const MessageForm = ({ postText, onPostCreate, onFormChange }) => {
   return (
-    <form className={styles.form} onSubmit={onFormSubmit}>
+    <form className={styles.form} onSubmit={onPostCreate}>
       <textarea
         rows={3}
         className={styles.textarea}
-        onChange={onFormChange}
-        value={newTextPost}
-        type="text"
+        name="postText"
+        value={postText}
         placeholder="Post..."
+        onChange={onFormChange}
       />
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={onClearForm}>
-          Clear
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => onAddPost(newTextPost)}
-        >
+        <button type="submit" className={styles.button}>
           Send
         </button>
       </div>

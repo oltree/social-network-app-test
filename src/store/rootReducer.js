@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
 
-export const rootReducer = combineReducers({});
+import { profilePostsReducer } from "../pages/Profile/reducers";
+
+export const rootReducer = combineReducers({
+  profilePosts: profilePostsReducer,
+});

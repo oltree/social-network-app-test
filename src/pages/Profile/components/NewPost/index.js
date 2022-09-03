@@ -6,32 +6,24 @@ import styles from "./index.module.scss";
 
 const NewPost = ({
   id,
-  textPost,
-  handleRemovePost,
+  text,
   likes,
-  onIncrementLikes,
-  onDecrementLikes,
+  onPostRemove,
+  onPostIncrementLike,
+  onPostDecrementLike,
 }) => {
-  console.log(likes);
   return (
     <div className={styles.wrapper}>
       <div className={styles.post}>
         <img className={styles.avatar} height={50} src={Avatar} alt="avatar" />
-        <div className={styles.text}>{textPost}</div>
+        <div className={styles.text}>{text}</div>
         <div>
-          <button
-            onClick={() =>
-              likes % 2 === 0 ? onIncrementLikes(id) : onDecrementLikes(id)
-            }
-            class
-          >
-            add like
-          </button>
+          <button onClick={() => onPostIncrementLike(id)}>add like</button>
           {likes !== 0 && <div>{likes}</div>}
         </div>
       </div>
 
-      <button className={styles.close} onClick={() => handleRemovePost(id)}>
+      <button className={styles.close} onClick={() => onPostRemove(id)}>
         X
       </button>
     </div>

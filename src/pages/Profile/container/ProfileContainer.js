@@ -1,84 +1,64 @@
-import { useState, useCallback } from "react";
-import { v4 as uuid } from "uuid";
+import { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import ProfileLayout from "../components/ProfileLayout";
 
-import { data } from "../../../static/Data";
+import { postsSelector } from "../selectors/";
+
+import { CREATE_POST, REMOVE_POST } from "../actions";
+
+import { useForm } from "../../../hooks";
 
 const ProfileContainer = () => {
-  const [posts, setPosts] = useState(data.profilePage?.postList);
-  const [newTextPost, setNewTextPost] = useState("");
+  const dispatch = useDispatch();
 
-  const handleAddPost = useCallback((textPost) => {
-    setPosts((state) => {
-      const postsCopy = [...state];
+  const posts = useSelector(postsSelector);
 
-      const newPost = {
-        id: uuid(),
-        textPost,
-        likes: 0,
-      };
+  const [formData, handleFormChange, handleFormReset] = useForm({
+    postText: "",
+  });
 
-      return [newPost, ...postsCopy];
-    });
-  }, []);
+  const handlePostCreate = useCallback(
+    (event) => {
+      event.preventDefault();
 
-  const handleRemovePost = useCallback((id) => {
-    setPosts((state) => {
-      const postsCopy = [...state];
+      dispatch(CREATE_POST(formData.postText));
 
-      return postsCopy.filter((post) => post.id !== id);
-    });
-  }, []);
+      handleFormReset();
+    },
+    [formData.postText, dispatch, handleFormReset]
+  );
 
-  const handleFormChange = useCallback((event) => {
-    setNewTextPost(event.target.value);
-  }, []);
+  const handlePostRemove = useCallback(
+    (id) => {
+      dispatch(REMOVE_POST(id));
+    },
+    [dispatch]
+  );
 
-  const handleFormSubmit = useCallback((event) => {
-    event.preventDefault();
-    setNewTextPost("");
-  }, []);
+  const handlePostIncrementLike = useCallback(
+    (id) => {
+      dispatch(REMOVE_POST(id));
+    },
+    [dispatch]
+  );
 
-  const handleClearForm = useCallback(() => {
-    setNewTextPost("");
-  }, []);
-
-  const handleIncrementLikes = useCallback((id) => {
-    setPosts((state) => {
-      const postsCopy = [...state];
-
-      const updateValueLikes = postsCopy.find((post) => post.id === id);
-
-      updateValueLikes.likes += 1;
-
-      return postsCopy;
-    });
-  }, []);
-
-  const handleDecrementLikes = useCallback((id) => {
-    setPosts((state) => {
-      const postsCopy = [...state];
-
-      const updateValueLikes = postsCopy.find((post) => post.id === id);
-
-      updateValueLikes.likes -= 1;
-
-      return postsCopy;
-    });
-  }, []);
+  const handlePostDecrementLike = useCallback(
+    (id) => {
+      dispatch(REMOVE_POST(id));
+    },
+    [dispatch]
+  );
 
   return (
     <ProfileLayout
       posts={posts}
-      onAddPost={handleAddPost}
-      onRemovePost={handleRemovePost}
-      newTextPost={newTextPost}
+      postText={formData.postText}
       onFormChange={handleFormChange}
-      onFormSubmit={handleFormSubmit}
-      onClearForm={handleClearForm}
-      onIncrementLikes={handleIncrementLikes}
-      onDecrementLikes={handleDecrementLikes}
+      onPostCreate={handlePostCreate}
+      onPostRemove={handlePostRemove}
+      onPostIncrementLike={handlePostIncrementLike}
+      onPostDecrementLike={handlePostDecrementLike}
     />
   );
 };

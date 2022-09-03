@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { v4 as uuid } from "uuid";
 
 import NewPost from "../NewPost";
 import PostsForm from "../PostsForm";
@@ -7,37 +8,32 @@ import styles from "./index.module.scss";
 
 const ProfilePosts = ({
   posts,
-  onAddPost,
-  onRemovePost,
-  newTextPost,
+  postText,
+  onPostCreate,
   onFormChange,
-  onFormSubmit,
-  onClearForm,
-  onIncrementLikes,
-  onDecrementLikes,
+  onPostRemove,
+  onPostIncrementLike,
+  onPostDecrementLike,
 }) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>My Posts</h2>
 
       <PostsForm
-        onAddPost={onAddPost}
-        newTextPost={newTextPost}
+        postText={postText}
+        onPostCreate={onPostCreate}
         onFormChange={onFormChange}
-        onFormSubmit={onFormSubmit}
-        onClearForm={onClearForm}
       />
 
       <div className={styles.posts}>
-        {posts.map(({ id, textPost, likes }) => (
+        {posts.map(({ id, text, likes }) => (
           <NewPost
-            key={id}
+            key={uuid()}
             id={id}
-            textPost={textPost}
-            likes={likes}
-            onRemovePost={onRemovePost}
-            onIncrementLikes={onIncrementLikes}
-            onDecrementLikes={onDecrementLikes}
+            text={text}
+            onPostRemove={onPostRemove}
+            onPostIncrementLike={onPostIncrementLike}
+            onPostDecrementLike={onPostDecrementLike}
           />
         ))}
       </div>
