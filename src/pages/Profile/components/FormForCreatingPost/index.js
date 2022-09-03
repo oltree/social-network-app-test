@@ -2,7 +2,7 @@ import { memo } from "react";
 
 import styles from "./index.module.scss";
 
-const MessageForm = ({ postText, onPostCreate, onFormChange }) => {
+const FormForCreatingPost = ({ postText, onPostCreate, onFormChange }) => {
   return (
     <form className={styles.form} onSubmit={onPostCreate}>
       <textarea
@@ -22,4 +22,4 @@ const MessageForm = ({ postText, onPostCreate, onFormChange }) => {
   );
 };
 
-export default memo(MessageForm);
+export default memo(FormForCreatingPost);

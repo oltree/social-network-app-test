@@ -1,5 +1,8 @@
 import { memo } from "react";
 
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+
 import Avatar from "../../../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
@@ -28,13 +31,20 @@ const NewPost = ({
           </div>
         </div>
 
-        <button className={styles.close} onClick={() => onPostRemove(id)}>
-          X
-        </button>
+        <div>
+          <IconButton
+            aria-label="delete"
+            color="error"
+            onClick={() => onPostRemove(id)}
+          >
+            <DeleteIcon />
+          </IconButton>
+        </div>
       </div>
       <div className={styles.text}>{text}</div>
       <div className={styles.likesContainer}>
         <button
+          className={styles.like}
           onClick={() =>
             likes % 2 === 0 ? onPostIncrementLike(id) : onPostDecrementLike(id)
           }

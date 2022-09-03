@@ -29,20 +29,17 @@
 }
 
 .text {
-	width: 800px;
 	word-wrap: break-word;
 }
 
 .likesContainer {
 	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
-.close {
-	color: white;
-	background: red;
+.like {
+	padding: 2px 4px;
+	background: rgb(190, 80, 80);
 	border-radius: 5px;
-
-	&:hover {
-		background: rgb(187, 0, 0);
-	}
 }

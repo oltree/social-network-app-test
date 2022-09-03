@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 import ProfileBackground from "../ProfileBackground";
 import ProfileContactInformation from "../ProfileContactInformation";
 import NewPost from "../NewPost";
-import PostsForm from "../PostsForm";
+import FormForCreatingPost from "../FormForCreatingPost";
 
 import styles from "./index.module.scss";
 
@@ -24,7 +24,7 @@ const ProfileLayout = ({
       <div className={styles.wrapper}>
         <h2 className={styles.title}>My Posts</h2>
 
-        <PostsForm
+        <FormForCreatingPost
           postText={postText}
           onPostCreate={onPostCreate}
           onFormChange={onFormChange}
