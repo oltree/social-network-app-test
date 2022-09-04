@@ -3,7 +3,7 @@ import { memo } from "react";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import Avatar from "../../../../static/images/avatar.jpg";
+import Avatar from "../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
 

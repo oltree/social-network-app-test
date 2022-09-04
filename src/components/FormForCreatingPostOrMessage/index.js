@@ -5,7 +5,11 @@ import SendIcon from "@mui/icons-material/Send";
 
 import styles from "./index.module.scss";
 
-const FormForCreatingPost = ({ postText, onPostCreate, onFormChange }) => {
+const FormForCreatingPostOrMessage = ({
+  postText,
+  onPostCreate,
+  onFormChange,
+}) => {
   return (
     <form className={styles.form} onSubmit={onPostCreate}>
       <textarea
@@ -29,4 +33,4 @@ const FormForCreatingPost = ({ postText, onPostCreate, onFormChange }) => {
   );
 };
 
-export default memo(FormForCreatingPost);
+export default memo(FormForCreatingPostOrMessage);

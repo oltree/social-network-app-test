@@ -1,9 +1,9 @@
 import DialogsLayout from "../components/DialogsLayout";
 
-import { data } from "../../../static/Data";
+import { users } from "../mock";
 
 const DialogsContainer = () => {
-  return <DialogsLayout users={data.messagesPage?.users} />;
+  return <DialogsLayout users={users} />;
 };
 
 export default DialogsContainer;

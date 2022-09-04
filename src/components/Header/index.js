@@ -1,4 +1,4 @@
-import Logotip from "./static/images/logo.png";
+import Logotip from "../../static/images/logo.png";
 
 import styles from "./index.module.scss";
 

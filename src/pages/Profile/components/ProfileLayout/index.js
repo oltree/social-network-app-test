@@ -3,8 +3,8 @@ import { v4 as uuid } from "uuid";
 
 import ProfileBackground from "../ProfileBackground";
 import ProfileContactInformation from "../ProfileContactInformation";
-import NewPost from "../NewPost";
-import FormForCreatingPost from "../FormForCreatingPost";
+import NewPost from "../../../../components/NewPost";
+import FormForCreatingPost from "../../../../components/FormForCreatingPostOrMessage";
 
 import styles from "./index.module.scss";
 
