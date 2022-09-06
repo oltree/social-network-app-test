@@ -2,33 +2,21 @@ export const users = [
   {
     name: "Max",
     id: "max",
-    messages: {
-      user: ["Hello, Oleg!", "How are you?"],
-      me: [],
-    },
+    userMessages: ["Hello, Oleg!", "How are you?"],
   },
   {
     name: "Dasha",
     id: "dasha",
-    messages: {
-      user: ["Hello, Oleg!", "What are you doing?"],
-      me: [],
-    },
+    userMessages: ["Hello, Oleg!", "What are you doing?"],
   },
   {
     name: "Ivan",
     id: "ivan",
-    messages: {
-      user: ["Hello, Oleg!", "Will you go for a walk?"],
-      me: [],
-    },
+    userMessages: ["Hello, Oleg!", "Will you go for a walk?"],
   },
   {
     name: "Vadim",
     id: "vadim",
-    messages: {
-      user: ["Hello, Oleg!", "When's your birthday?"],
-      me: [],
-    },
+    userMessages: ["Hello, Oleg!", "When's your birthday?"],
   },
 ];
