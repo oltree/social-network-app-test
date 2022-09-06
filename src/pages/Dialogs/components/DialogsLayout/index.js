@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
-//import { v4 as uuid } from "uuid";
 
 import Dialogs from "../Dialogs";
-import Messages from "../Messages";
+import ListMessages from "../ListMessages";
 
 import styles from "./index.module.scss";
 
@@ -29,7 +28,7 @@ const DialogsLayout = ({
               key={id}
               path={id}
               element={
-                <Messages
+                <ListMessages
                   userMessages={userMessages}
                   name={name}
                   messages={messages}
