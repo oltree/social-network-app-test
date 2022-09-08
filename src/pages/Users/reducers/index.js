@@ -1,4 +1,5 @@
 import { handleActions } from "redux-actions";
+import { v4 as uuid } from "uuid";
 
 import * as actions from "../actions";
 
@@ -8,7 +9,28 @@ const initialState = {
 
 export const usersListReducer = handleActions(
   {
-    [actions.GET_USERS]: (state) => {},
+    [actions.GET_USERS]: (state) => {
+      const usersCopy = [...state.users];
+
+      const newUser = {
+        id: uuid(),
+        firstName: "Oleg",
+        lastName: "Melekh",
+        status: "I'm new user",
+        location: {
+          country: "Belarus",
+          town: "Minsk",
+        },
+        follow: true,
+      };
+
+      usersCopy.push(newUser);
+
+      return {
+        ...state,
+        users: usersCopy,
+      };
+    },
   },
   initialState
 );

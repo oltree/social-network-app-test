@@ -12,7 +12,7 @@ const UsersContainer = () => {
   const users = useSelector(usersSelector);
 
   const handleGetUsers = () => {
-    dispatch(GET_USERS);
+    dispatch(GET_USERS());
   };
 
   return <UsersLayout users={users} onGetUsers={handleGetUsers} />;
