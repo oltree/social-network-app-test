@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import DialogsLayout from "../components/DialogsLayout";
 
-import { messagesSelector } from "../selectors/";
+import { messagesSelector } from "../selectors";
 
 import { useForm } from "../../../hooks";
 

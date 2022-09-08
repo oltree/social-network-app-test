@@ -4,4 +4,5 @@ export const ROUTE_NAMES = {
   NEWS: "/news",
   MUSIC: "/music",
   SETTING: "/setting",
+  USERS: "/users",
 };

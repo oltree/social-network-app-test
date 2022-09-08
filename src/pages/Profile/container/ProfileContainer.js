@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ProfileLayout from "../components/ProfileLayout";
 
-import { postsSelector } from "../selectors/";
+import { postsSelector } from "../selectors";
 
 import { useForm } from "../../../hooks";
 
