@@ -4,7 +4,7 @@ import Avatar from "../../../../static/images/avatar.jpg";
 
 import styles from "./index.module.scss";
 
-const UserCard = ({ name, status, followed, photos }) => {
+const UserCard = ({ id, name, status, followed, photos, onAddFollow }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.userCard}>
@@ -16,7 +16,9 @@ const UserCard = ({ name, status, followed, photos }) => {
           <div>{status}</div>
         </div>
       </div>
-      <button className={styles.button}>Follow</button>
+      <button onClick={() => onAddFollow(id)} className={styles.button}>
+        {followed ? "Follow" : "Unfollow"}
+      </button>
     </div>
   );
 };

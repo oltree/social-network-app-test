@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import UsersLayout from "../components/UsersLayout";
@@ -8,7 +9,7 @@ import { useFetching } from "../../../hooks/useFetching";
 
 import { getUsers } from "../api";
 
-import { GET_USERS } from "../actions";
+import { GET_USERS, FOLLOW_UNFOLLOW } from "../actions";
 
 const UsersContainer = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,10 @@ const UsersContainer = () => {
     dispatch(GET_USERS());
   };
 
+  const handleAddFollow = useCallback(() => {
+    dispatch(FOLLOW_UNFOLLOW);
+  }, [dispatch]);
+
   return (
     <UsersLayout
       users={users}
@@ -28,6 +33,7 @@ const UsersContainer = () => {
       isLoading={isLoading}
       error={error}
       onGetUsers={handleGetUsers}
+      onAddFollow={handleAddFollow}
     />
   );
 };

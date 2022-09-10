@@ -31,6 +31,18 @@ export const usersListReducer = handleActions(
         users: usersCopy,
       };
     },
+    [actions.FOLLOW_UNFOLLOW]: (state, { payload: id }) => {
+      const usersCopy = [...state.users];
+
+      const foundUser = usersCopy.find((user) => user.id === id);
+
+      foundUser.followed = !foundUser.followed;
+
+      return {
+        ...state,
+        users: usersCopy,
+      };
+    },
   },
   initialState
 );
