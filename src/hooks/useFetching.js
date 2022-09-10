@@ -26,7 +26,7 @@ export const useFetching = (
     if (isLoadOnMount) {
       handleDataLoad();
     }
-  }, [isLoadOnMount]);
+  }, [isLoadOnMount, handleDataLoad]);
 
   return { data, isLoading, error, handleDataLoad };
 };

@@ -6,19 +6,16 @@ import { usersSelector } from "../selectors";
 
 import { useFetching } from "../../../hooks/useFetching";
 
-import { GET_USERS } from "../actions";
+import { getUsers } from "../api";
 
-import { BASE_URL } from "../api/config";
+import { GET_USERS } from "../actions";
 
 const UsersContainer = () => {
   const dispatch = useDispatch();
 
   const users = useSelector(usersSelector);
 
-  const { data, isLoading, error } = useFetching(
-    async () => fetch(`${BASE_URL}/users`).then((response) => response.json()),
-    {}
-  );
+  const { data, isLoading, error } = useFetching(getUsers, {});
 
   const handleGetUsers = () => {
     dispatch(GET_USERS());

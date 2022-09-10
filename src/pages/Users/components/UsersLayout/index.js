@@ -10,7 +10,7 @@ const UsersLayout = ({ users, onGetUsers, data, isLoading, error }) => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          data.items?.map(({ id, name, status, followed, photos }) => (
+          data.data?.items?.map(({ id, name, status, followed, photos }) => (
             <UserCard
               name={name}
               key={id}
