@@ -1,13 +1,16 @@
-const UsersLayout = ({ users, onGetUsers }) => {
+const UsersLayout = ({ users, onGetUsers, usersGet, isLoading, error }) => {
   return (
     <div>
-      <h1>UsersLayout</h1>
+      <h1>Users</h1>
       <div>
-        {users.map((user) => (
-          <div key={user.id}>{user.firstName}</div>
-        ))}
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          usersGet.map((user) => <div key={user.id}>{user.name}</div>)
+        )}
       </div>
-      <button onClick={onGetUsers}>Add User</button>
+
+      {error && <div style={{ color: "red" }}>{error}</div>}
     </div>
   );
 };

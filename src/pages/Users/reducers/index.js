@@ -21,7 +21,7 @@ export const usersListReducer = handleActions(
           country: "Belarus",
           town: "Minsk",
         },
-        follow: true,
+        followed: true,
       };
 
       usersCopy.push(newUser);
