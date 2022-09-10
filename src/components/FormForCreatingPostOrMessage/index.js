@@ -7,8 +7,8 @@ import styles from "./index.module.scss";
 
 const FormForCreatingPostOrMessage = ({
   postText,
-  onPostCreate,
   onFormChange,
+  onPostCreate,
 }) => {
   return (
     <form className={styles.form} onSubmit={onPostCreate}>
