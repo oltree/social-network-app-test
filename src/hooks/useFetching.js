@@ -1,24 +1,32 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-export const useFetching = (asyncCallback, initialValue) => {
+export const useFetching = (
+  asyncCallback,
+  initialValue,
+  isLoadOnMount = true
+) => {
   const [data, setData] = useState(initialValue);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const handleDataLoad = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await asyncCallback();
+
+      setData(response);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [asyncCallback]);
+
   useEffect(() => {
-    (async () => {
-      setLoading(true);
-      try {
-        const response = await asyncCallback();
+    if (isLoadOnMount) {
+      handleDataLoad();
+    }
+  }, [isLoadOnMount]);
 
-        setData(response);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
-
-  return { data, isLoading, error };
+  return { data, isLoading, error, handleDataLoad };
 };

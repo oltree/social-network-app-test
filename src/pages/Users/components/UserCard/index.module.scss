@@ -1,0 +1,27 @@
+.wrapper {
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+
+.userCard {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 10px;
+}
+
+.avatar {
+	height: 60px;
+	width: 60px;
+}
+
+.information {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.button {
+	width: 60px;
+	padding: 5px;
+}
