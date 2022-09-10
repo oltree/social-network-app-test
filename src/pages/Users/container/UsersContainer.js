@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import UsersLayout from "../components/UsersLayout";
 
 import { usersSelector } from "../selectors";
 
+import { useFetching } from "../../../hooks/useFetching";
+
 import { GET_USERS } from "../actions";
+
 import { BASE_URL } from "../api/config";
 
 const UsersContainer = () => {
@@ -13,27 +15,10 @@ const UsersContainer = () => {
 
   const users = useSelector(usersSelector);
 
-  const [usersGet, setUsersGet] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        setLoading(true);
-
-        const data = await fetch(`${BASE_URL}/users`).then((response) =>
-          response.json()
-        );
-
-        setUsersGet(data.items);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
+  const { data, isLoading, error } = useFetching(
+    async () => fetch(`${BASE_URL}/users`).then((response) => response.json()),
+    {}
+  );
 
   const handleGetUsers = () => {
     dispatch(GET_USERS());
@@ -42,7 +27,7 @@ const UsersContainer = () => {
   return (
     <UsersLayout
       users={users}
-      usersGet={usersGet}
+      data={data}
       isLoading={isLoading}
       error={error}
       onGetUsers={handleGetUsers}

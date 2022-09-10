@@ -1,4 +1,4 @@
-const UsersLayout = ({ users, onGetUsers, usersGet, isLoading, error }) => {
+const UsersLayout = ({ users, onGetUsers, data, isLoading, error }) => {
   return (
     <div>
       <h1>Users</h1>
@@ -6,7 +6,7 @@ const UsersLayout = ({ users, onGetUsers, usersGet, isLoading, error }) => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          usersGet.map((user) => <div key={user.id}>{user.name}</div>)
+          data.items?.map((user) => <div key={user.id}>{user.name}</div>)
         )}
       </div>
 
