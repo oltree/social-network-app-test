@@ -26,6 +26,7 @@ const UsersContainer = () => {
     dispatch(FOLLOW_UNFOLLOW);
   }, [dispatch]);
 
+  console.log(data);
   return (
     <UsersLayout
       users={users}

@@ -1,1 +1,1 @@
-export const usersSelector = (state) => state.usersList.users;
+export const usersSelector = (state) => state.usersList;

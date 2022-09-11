@@ -4,7 +4,10 @@ import { v4 as uuid } from "uuid";
 import * as actions from "../actions";
 
 const initialState = {
+  usersFollow: [],
   users: [],
+  isLoading: false,
+  error: null,
 };
 
 export const usersListReducer = handleActions(
@@ -38,9 +41,12 @@ export const usersListReducer = handleActions(
 
       foundUser.followed = !foundUser.followed;
 
+      const userFollow = usersCopy.filter((user) => user.followed === true);
+
       return {
         ...state,
         users: usersCopy,
+        usersFolow: userFollow,
       };
     },
   },
